@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ee402e5d4b34862b5defb98425c9745, type: 3}
+  m_Name: Level data
+  m_EditorClassIdentifier: 
+  Datas:
+  - LevelType: 0
+    Sprite: {fileID: 21300000, guid: 4dbcd63b82f32dc478715cbbe7102bbf, type: 3}
+    RowName: Trace letters
+  - LevelType: 1
+    Sprite: {fileID: 21300000, guid: 7a5a05b6ba449f24fb69fe4dd66cd7bf, type: 3}
+    RowName: Trace numbers
+  - LevelType: 2
+    Sprite: {fileID: 21300000, guid: 3aa43b41ae26fb04caf4fc824dcd8141, type: 3}
+    RowName: Trace shapes
+  Colors:
+  - {r: 0.54509807, g: 0, b: 1, a: 1}
+  - {r: 0.29411766, g: 0, b: 0.50980395, a: 1}
+  - {r: 0, g: 0, b: 1, a: 1}
+  - {r: 0, g: 1, b: 0, a: 1}
+  - {r: 1, g: 1, b: 0, a: 1}
+  - {r: 1, g: 0.49803922, b: 0, a: 1}
+  - {r: 1, g: 0, b: 0, a: 1}

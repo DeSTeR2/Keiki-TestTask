@@ -1,0 +1,88 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SpriteAtlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 1a331761feec59446adaa319a67839e0, type: 3}
+    - {fileID: 2800000, guid: 99bb540d528a65f4fb0806d3279c435d, type: 3}
+    - {fileID: 2800000, guid: 3aa43b41ae26fb04caf4fc824dcd8141, type: 3}
+    - {fileID: 2800000, guid: dd0a95524885ea649b5c51f37e26931d, type: 3}
+    - {fileID: 2800000, guid: fe68356bd8a56fa4ba89be298b8a2bb4, type: 3}
+    - {fileID: 2800000, guid: a4c050888ef00304fa5986361f4af611, type: 3}
+    - {fileID: 2800000, guid: 99e213e3543f67d4fa2b426978e4c1b3, type: 3}
+    - {fileID: 2800000, guid: 270871dc2af5da045af902e6ddd20deb, type: 3}
+    - {fileID: 2800000, guid: 7a5a05b6ba449f24fb69fe4dd66cd7bf, type: 3}
+    - {fileID: 2800000, guid: 4dbcd63b82f32dc478715cbbe7102bbf, type: 3}
+    - {fileID: 2800000, guid: 099b2aaab8c103a4a885d2343ffadc28, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+    packedSpriteRenderDataKeys:
+    - 3aa43b41ae26fb04caf4fc824dcd8141: 21300000
+    - 1a331761feec59446adaa319a67839e0: 21300000
+    - dd0a95524885ea649b5c51f37e26931d: 21300000
+    - 99e213e3543f67d4fa2b426978e4c1b3: 21300000
+    - 7a5a05b6ba449f24fb69fe4dd66cd7bf: 21300000
+    - a4c050888ef00304fa5986361f4af611: 21300000
+    - 099b2aaab8c103a4a885d2343ffadc28: 21300000
+    - 4dbcd63b82f32dc478715cbbe7102bbf: 21300000
+    - fe68356bd8a56fa4ba89be298b8a2bb4: 21300000
+    - 270871dc2af5da045af902e6ddd20deb: 21300000
+    - 99bb540d528a65f4fb0806d3279c435d: 21300000
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 3aa43b41ae26fb04caf4fc824dcd8141, type: 3}
+  - {fileID: 21300000, guid: 1a331761feec59446adaa319a67839e0, type: 3}
+  - {fileID: 21300000, guid: dd0a95524885ea649b5c51f37e26931d, type: 3}
+  - {fileID: 21300000, guid: 99e213e3543f67d4fa2b426978e4c1b3, type: 3}
+  - {fileID: 21300000, guid: 7a5a05b6ba449f24fb69fe4dd66cd7bf, type: 3}
+  - {fileID: 21300000, guid: a4c050888ef00304fa5986361f4af611, type: 3}
+  - {fileID: 21300000, guid: 099b2aaab8c103a4a885d2343ffadc28, type: 3}
+  - {fileID: 21300000, guid: 4dbcd63b82f32dc478715cbbe7102bbf, type: 3}
+  - {fileID: 21300000, guid: fe68356bd8a56fa4ba89be298b8a2bb4, type: 3}
+  - {fileID: 21300000, guid: 270871dc2af5da045af902e6ddd20deb, type: 3}
+  - {fileID: 21300000, guid: 99bb540d528a65f4fb0806d3279c435d, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - circle_1
+  - BG
+  - Didi space ship
+  - icon btn home
+  - shape_1
+  - gradient_violet_bg
+  - star
+  - shape_A
+  - Finger
+  - level_icon_bg
+  - btn circle blue
+  m_RenderDataMap: {}
+  m_Tag: SpriteAtlas
+  m_IsVariant: 0
