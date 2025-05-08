@@ -5,5 +5,6 @@ namespace Infrastructure.Game
         public static string MenuUIPath = "Menu/Menu";
         public static string MenuButton = "Menu/Button";
         public static string ContentRow = "Menu/ContentRow";
+        public static string PathSpriteRender = "Game/PathSpriteRender";
     }
 }

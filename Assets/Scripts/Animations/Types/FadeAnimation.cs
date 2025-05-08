@@ -3,7 +3,6 @@ using UnityEngine;
 
 namespace Animations.Types
 {
-    [RequireComponent(typeof(CanvasGroup))]
     public class FadeAnimation : AnimationObject
     {
         [SerializeField] float _startAlpha = 0;
@@ -31,6 +30,12 @@ namespace Animations.Types
 
             _canvasGroup.alpha = _endAlpha;
             _canvasGroup.DOFade(_startAlpha, _duration).SetEase(_ease).SetLoops(_loopNuber, _loopType).OnComplete(() => { OnAnimationEnd?.Invoke(); });
+        }
+
+        public override void Animate(Transform animateObject)
+        {
+            _canvasGroup = animateObject.GetComponent<CanvasGroup>();
+            Animate();
         }
 
         public override void SetToStartValue()

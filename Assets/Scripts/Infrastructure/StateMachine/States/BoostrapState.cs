@@ -1,3 +1,5 @@
+
+using Infrastructure.Events;
 using Infrastructure.Game;
 using Systems.File;
 using UnityEngine;
@@ -8,9 +10,11 @@ namespace Infrastructure.StateMachine.States
     {
         private readonly GameStateMachine _stateMachine;
 
-        public BoostrapState(GameStateMachine stateMachine)
+        public BoostrapState(GameStateMachine stateMachine, AllEvents allEvents)
         {
             _stateMachine = stateMachine;
+            
+            allEvents.InitEvents();
         }
         
         public void Enter(int param)

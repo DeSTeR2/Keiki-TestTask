@@ -28,5 +28,10 @@ namespace Game
         {
             _gameController.InitLevel();
         }
+
+        private void OnDestroy()
+        {
+            _gameController.Dispose();
+        }
     }
 }

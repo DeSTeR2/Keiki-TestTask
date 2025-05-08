@@ -1,17 +1,26 @@
 using System;
+using Infrastructure.Events;
 using Unity.VisualScripting;
 using UnityEngine;
+using Zenject;
+using EventType = Infrastructure.Events.EventType;
 
 namespace Systems
 {
     public class CameraRayCastSystem : MonoBehaviour
     {
         public Action<Ray> OnDragging;
-        public Action OnDragEnd;
 
         private bool isButtonPressed;
         private Vector3 prevMousePosition = Vector3.negativeInfinity;
+        private EventHolder _dragEndedEvent;
 
+        [Inject]
+        public void Construct(AllEvents allEvents)
+        {
+            _dragEndedEvent = allEvents[EventType.DragEnded];
+        }
+        
         private void Update()
         {
             HandleClickLogic();
@@ -39,6 +48,7 @@ namespace Systems
             if (Input.GetMouseButtonUp(0))
             {
                 isButtonPressed = false;
+                _dragEndedEvent?.Invoke();
             }
         }
     }
