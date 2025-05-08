@@ -15,6 +15,9 @@ namespace Menu.Systems.DataRow
         private LevelDataCollection _levelDataCollection;
         private IAssetProviderService _assetProviderService;
 
+        public Action<LevelData, Color> OnLevelSelected;
+        private LevelData _levelData;
+
         [Inject]
         public void Construct(LevelDataCollection levelDataCollection, IAssetProviderService assetProviderService)
         {
@@ -24,10 +27,14 @@ namespace Menu.Systems.DataRow
         
         public void SpawnButtons(LevelData levelData)
         {
+            _levelData = levelData;
             List<Color> colors = _levelDataCollection.Colors;
 
             ButtonFactory buttonFactory = new ButtonFactory(levelData, buttonParent, colors, _assetProviderService);
-            buttonFactory.CreateButtons();
+            buttonFactory.CreateButtons((color) =>
+            {
+                OnLevelSelected?.Invoke(_levelData, color);
+            });
 
             rowName.text = levelData.RowName;
         }

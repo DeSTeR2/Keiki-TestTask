@@ -20,7 +20,6 @@ namespace Infrastructure.StateMachine
 
         private void Awake()
         {
-            DontDestroyOnLoad(gameObject);
             loadingAnimation.StartAnimation();
         }
 

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Infrastructure.Game;
 using Infrastructure.Services.Assets;
@@ -22,12 +23,12 @@ namespace Menu.Systems.DataRow
             _assetProviderService = assetProviderService;
         }
 
-        public void CreateButtons()
+        public void CreateButtons(Action<Color> onClick)
         {
             for (int i = 0; i < _colors.Count; i++)
             {
                 MenuButton btn = _assetProviderService.Instantiate<MenuButton>(Constants.MenuButton, _buttonParent);
-                btn.SetInfo(_levelData, _colors[i]);
+                btn.SetInfo(_levelData, _colors[i], onClick);
             }
         }
     }

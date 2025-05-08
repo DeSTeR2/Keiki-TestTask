@@ -3,7 +3,7 @@ using Infrastructure.StateMachine.States;
 
 namespace Infrastructure.StateMachine
 {
-    public class GameState : IPayloadState<string>
+    public class GameState : IState
     {
         private const string GameScene = "GameScene";
         private readonly GameStateMachine _gameStateMachine;
@@ -13,7 +13,7 @@ namespace Infrastructure.StateMachine
             _gameStateMachine = gameStateMachine;
         }
 
-        public void Enter(string param)
+        public void Enter()
         {
             _gameStateMachine.Enter<LoadingState, string>(GameScene, OnLoaded);
         }
@@ -23,8 +23,6 @@ namespace Infrastructure.StateMachine
             
         }
 
-        public void Exit()
-        {
-        }
+        public void Exit() { }
     }
 }

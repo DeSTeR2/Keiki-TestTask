@@ -10,6 +10,7 @@ namespace Infrastructure.Services.Assets
         
         TObject Instantiate<TObject>(string path, DiContainer container = null);
         TObject Instantiate<TObject>(string path, Transform at, DiContainer container = null);
+        TObject Instantiate<TObject>(GameObject go, Transform at, DiContainer container = null);
         
     }
 }

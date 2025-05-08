@@ -79,6 +79,7 @@ MonoBehaviour:
   loadingCurtain: {fileID: 7119383112251809986}
   forcedTimeToWait: 3
   _bootsTrapper: {fileID: 1632805929028074718}
+  _selectedLevel: {fileID: 11400000, guid: ba5009f4fff04654b81d4eee58023299, type: 2}
 --- !u!1 &1547061936628960219
 GameObject:
   m_ObjectHideFlags: 0

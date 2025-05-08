@@ -1,8 +1,10 @@
+using Game;
 using Infrastructure.Game;
 using Infrastructure.Services;
 using Infrastructure.Services.Assets;
 using Infrastructure.StateMachine;
 using Infrastructure.StateMachine.States;
+using LevelDatas;
 using Systems.File;
 using UnityEngine;
 using Zenject;
@@ -14,11 +16,13 @@ namespace Infrastructure.Installers
         [SerializeField] private LoadingCurtain loadingCurtain;
         [SerializeField] float forcedTimeToWait = 3;
         [SerializeField] private BootsTrapper _bootsTrapper;
+        [SerializeField] private SelectedLevelData _selectedLevel;
         
         public override void InstallBindings()
         {
             Container.BindInstance(loadingCurtain).AsTransient();
             Container.BindInstance(_bootsTrapper).AsTransient();
+            Container.BindInstance(_selectedLevel).AsTransient();
             Container.Bind<ICoroutineRunner>().FromInstance(_bootsTrapper).AsTransient();
             
             Container.Bind<IAssetProviderService>().To<AssetProviderService>().AsSingle();

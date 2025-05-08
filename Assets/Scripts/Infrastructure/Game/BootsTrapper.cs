@@ -19,7 +19,6 @@ namespace Infrastructure.Game
         private void Awake()
         {
             _gameStateMachine.Enter<BoostrapState, int>(0);
-            DontDestroyOnLoad(gameObject);
         }
     }
 }
