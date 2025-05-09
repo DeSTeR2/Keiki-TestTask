@@ -125,8 +125,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b879d3ef5d3a56742a969af8251a90fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _splineContainer: {fileID: 1419896714817333663}
-  clickTolerance: 0.8
-  evaluateStep: 0.05
-  toleranceRadiusColor: {r: 1, g: 0, b: 0, a: 0.3}
-  RayCastSystem: {fileID: 0}
+  Container: {fileID: 1419896714817333663}

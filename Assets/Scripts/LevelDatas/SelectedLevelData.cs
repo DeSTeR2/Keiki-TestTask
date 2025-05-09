@@ -3,8 +3,7 @@ using UnityEngine;
 
 namespace LevelDatas
 {
-    [CreateAssetMenu(fileName = "Selected level", menuName = "LevelData/Selected level")]
-    public class SelectedLevelData : ScriptableObject
+    public class SelectedLevelData
     {
         public LevelData levelData;
         public Color objectColor;
@@ -12,6 +11,11 @@ namespace LevelDatas
         public void SetData(LevelData levelData, Color color)
         {
             this.levelData = levelData;
+            objectColor = color;
+        }
+
+        public void UpdateColor(Color color)
+        {
             objectColor = color;
         }
     }

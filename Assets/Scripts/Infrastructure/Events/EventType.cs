@@ -4,6 +4,7 @@ namespace Infrastructure.Events
     {
         GameSceneLoaded,
         DragEnded,
-        LevelCleared
+        LevelCleared,
+        DraggingApproved
     }
 }

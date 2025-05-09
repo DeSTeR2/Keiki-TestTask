@@ -17,7 +17,7 @@ MonoBehaviour:
     RowName: Trace letters
     Sprite: {fileID: 21300000, guid: 4dbcd63b82f32dc478715cbbe7102bbf, type: 3}
     Prefab: {fileID: 6133675713145483146, guid: a2bca3c267fb81d4784f1e2ac2f891f8, type: 3}
-    TaskSound: {fileID: 8300000, guid: 65444c359f1499b449b2c33661a69b41, type: 3}
+    TaskSound: {fileID: 8300000, guid: 98de1ce34f6b66a46ae4a15420d36233, type: 3}
   - LevelType: 1
     RowName: Trace numbers
     Sprite: {fileID: 21300000, guid: 7a5a05b6ba449f24fb69fe4dd66cd7bf, type: 3}

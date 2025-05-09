@@ -18,10 +18,10 @@ public class PositionEvaluator
 
         while (r - l > 2)
         {
-            int m1 = r - (r - l) / 3;
-            int m2 = l + (r - l) / 3;
+            int m1 = l + (r - l) / 3;
+            int m2 = r - (r - l) / 3;
 
-            if (EvaluatePosition(m1, ray) < EvaluatePosition(m2, ray))
+            if (EvaluatePosition(m2, ray) <= EvaluatePosition(m1, ray))
             {
                 l = m1;
             }
@@ -34,11 +34,11 @@ public class PositionEvaluator
         float ev1 = EvaluatePosition(l, ray);
         float ev2 = EvaluatePosition(l + 1, ray);
         float ev3 = EvaluatePosition(r, ray);
-
+        
         float minDist = Mathf.Min(new[] { ev1, ev2, ev3 });
-        if (minDist == ev1) return new Tuple<int, float>(l + 1, minDist);
-        if (minDist == ev1) return new Tuple<int, float>(l + 2, minDist);
-        return new Tuple<int, float>(r + 1, minDist);
+        if (minDist == ev1) return new Tuple<int, float>(l, minDist);
+        if (minDist == ev2) return new Tuple<int, float>(l + 1, minDist);
+        return new Tuple<int, float>(r, minDist);
     }
 
     private float EvaluatePosition(int index, Ray ray)

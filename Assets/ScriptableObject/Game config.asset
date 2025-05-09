@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: Game config
   m_EditorClassIdentifier: 
   delayToShowObjects: 0.05
-  clickTolerance: 0.6
-  evaluateStep: 0.02
-  toleranceRadiusColor: {r: 1, g: 0, b: 0, a: 0.3}
-  splineSegmentNumber: 50
-  splineSegmentNumberInOneFrame: 10
+  minDistToSegmentPoint: 3
+  distanceBetweenSegments: 0.1
+  splineSegmentNumberInOneFrame: 20
   distanceBetweenSprites: 0.8
-  MinDistToSegmentPoint: 0.2
+  maxSkipSegments: 8
+  playStartSoundAfter: 7
+  showArrowTipAfter: 14
+  timerStep: 0.2

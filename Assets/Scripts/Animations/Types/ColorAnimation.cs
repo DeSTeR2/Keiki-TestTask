@@ -19,13 +19,13 @@ namespace Animations.Types
             if (animateObject.TryGetComponent(out Image image))
             {
                 image.color = startColor;
-                image.DOColor(endColor, _duration).SetEase(_ease).SetLoops(_loopNuber, _loopType);
+                image.DOColor(endColor, _duration).SetEase(_ease).SetLoops(_loopNuber, _loopType).OnComplete(() => {OnAnimationEnd?.Invoke();});
             }
             
             if (animateObject.TryGetComponent(out SpriteRenderer spriteRenderer))
             {
                 spriteRenderer.color = startColor;
-                spriteRenderer.DOColor(endColor, _duration).SetEase(_ease).SetLoops(_loopNuber, _loopType);
+                spriteRenderer.DOColor(endColor, _duration).SetEase(_ease).SetLoops(_loopNuber, _loopType).OnComplete(() => {OnAnimationEnd?.Invoke();});
             }
         }
     }

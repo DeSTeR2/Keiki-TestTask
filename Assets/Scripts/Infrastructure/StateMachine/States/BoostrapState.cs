@@ -1,7 +1,6 @@
 
 using Infrastructure.Events;
 using Infrastructure.Game;
-using Systems.File;
 using UnityEngine;
 
 namespace Infrastructure.StateMachine.States
@@ -13,7 +12,6 @@ namespace Infrastructure.StateMachine.States
         public BoostrapState(GameStateMachine stateMachine, AllEvents allEvents)
         {
             _stateMachine = stateMachine;
-            
             allEvents.InitEvents();
         }
         

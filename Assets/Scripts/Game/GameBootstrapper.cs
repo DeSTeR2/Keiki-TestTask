@@ -19,14 +19,16 @@ namespace Game
             _gameController = gameController;
         }
 
-        private void Awake()
+        void Awake()
         {
-            InitLevel();
-        }
-
-        private void InitLevel()
-        {
+#if UNITY_EDITOR
+            if (UnityEditor.EditorApplication.isPlayingOrWillChangePlaymode)
+            {
+                _gameController.InitLevel();
+            }
+#else
             _gameController.InitLevel();
+#endif
         }
 
         private void OnDestroy()

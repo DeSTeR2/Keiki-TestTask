@@ -20,7 +20,7 @@ namespace Infrastructure.StateMachine
         }
 
         public void LoadWithForcedWaiting(string sceneName, Action onLoad = null) => 
-            _coroutineRunner.StartCoroutine(LoadScene(sceneName, onLoad, _forcedTimeToWait));
+            _coroutineRunner?.StartCoroutine(LoadScene(sceneName, onLoad, _forcedTimeToWait));
         
         public void LoadWithTrueWaitTime(string sceneName, Action onLoad = null) =>
             _coroutineRunner.StartCoroutine(LoadScene(sceneName, onLoad));

@@ -1,5 +1,6 @@
 using Game;
 using Game.Figure;
+using LevelDatas;
 using Systems;
 using UnityEngine;
 using Zenject;
@@ -13,6 +14,7 @@ namespace Infrastructure.DIContainer
         [SerializeField] private SoundManager soundManager;
         [SerializeField] private GameConfig gameConfig;
         [SerializeField] private PathAnimation pathAnimation;
+        [SerializeField] private LevelDataCollection _dataCollection;
         [SerializeField] private SegmentPath segmentPath;
         
         public override void InstallBindings()
@@ -23,6 +25,7 @@ namespace Infrastructure.DIContainer
             Container.BindInstance(gameConfig);
             Container.BindInstance(pathAnimation);
             Container.BindInstance(segmentPath);
+            Container.BindInstance(_dataCollection);
 
             Container.Bind<GameController>().To<GameController>().AsSingle();
         }

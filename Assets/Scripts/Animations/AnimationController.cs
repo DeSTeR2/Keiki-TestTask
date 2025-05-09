@@ -10,7 +10,6 @@ namespace Animations
         [SerializeField] AnimationObject[] _animations;
         [SerializeField] bool playOnAwake = false;
 
-        public Action OnAnimationsEnd;
         int _animationEnd = 0;
 
         public delegate void CallBack();
@@ -20,7 +19,7 @@ namespace Animations
         private void Start()
         {
             for (int i = 0; i < _animations.Length; i++) {
-                _animations[i].OnAnimationEnd += ControllAnimationFlow;
+                _animations[i].OnAnimationEnd += ControlAnimationFlow;
             }
 
             if (playOnAwake) StartAnimation();
@@ -91,16 +90,7 @@ namespace Animations
             return this;
         }
 
-        private void ControllAnimationFlow()
-        {
-            _animationEnd++;
-
-            if (_animationEnd == _animations.Length) {
-                _callBack?.Invoke();
-                OnAnimationsEnd?.Invoke();
-                _animationEnd = 0;
-            }
-        }
+        public void ClearCallback() => _callBack = null;
 
         public void SetToStartValue()
         {
@@ -117,6 +107,16 @@ namespace Animations
                 if (animation.IsInfinite()) return true;
             }
             return false;
+        }
+
+        private void ControlAnimationFlow()
+        {
+            _animationEnd++;
+
+            if (_animationEnd >= _animations.Length) {
+                _callBack?.Invoke();
+                _animationEnd -= _animations.Length;
+            }
         }
     }
 }

@@ -1,9 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Infrastructure.Events;
-using Infrastructure.Services;
 using Infrastructure.StateMachine.States;
-using Systems.File;
 
 namespace Infrastructure.StateMachine
 {

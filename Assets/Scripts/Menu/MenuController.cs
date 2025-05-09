@@ -17,18 +17,16 @@ namespace Menu
         private readonly LevelDataCollection _levelDataCollection;
         private readonly Transform _contentRowParent;
         private readonly DiContainer _container;
-        private readonly SelectedLevelData _selectedLevelData;
         private readonly GameStateMachine _gameStateMachine;
 
         public MenuController(IAssetProviderService assetProviderService, 
             LevelDataCollection levelDataCollection, Transform contentRowParent, 
-            DiContainer container, SelectedLevelData selectedLevelData, GameStateMachine gameStateMachine)
+            DiContainer container, GameStateMachine gameStateMachine)
         {
             _assetProviderService = assetProviderService;
             _levelDataCollection = levelDataCollection;
             _contentRowParent = contentRowParent;
             _container = container;
-            _selectedLevelData = selectedLevelData;
             _gameStateMachine = gameStateMachine;
             CreateContentRows();
         }
@@ -47,7 +45,7 @@ namespace Menu
 
         private void BootGameScene(LevelData levelData, Color color)
         {
-            _selectedLevelData.SetData(levelData, color);
+            _levelDataCollection.CurrentLevel.SetData(levelData, color);
             _gameStateMachine.Enter<GameState>();
         }
     }

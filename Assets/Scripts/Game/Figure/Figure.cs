@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using Game.Character;
+using Game.Figure.Segment;
 using Infrastructure.Events;
 using UnityEngine;
 using Zenject;
@@ -15,29 +17,40 @@ namespace Game.Figure
         private List<FigureSegment> _segments;
         private Color _objectColor;
         private EventHolder _levelCleared;
+        private Ufo _character;
+        private AllEvents _allEvents;
 
         [Inject]
         public void Construct(AllEvents allEvents)
         {
-            _levelCleared = allEvents[EventType.LevelCleared];
+            _allEvents = allEvents;
+            _levelCleared = _allEvents[EventType.LevelCleared];
         }
 
-        public void InitFigure(Color objectColor)
+        public async void InitFigure(Color objectColor)
         {
             _objectColor = objectColor;
             _segments = new();
             for (int i = 0; i < segmentParent.childCount; i++)
             {
+                int sortOrder = (i + 1) * 2;
+                
                 FigureSegment segment = segmentParent.GetChild(i).gameObject.GetComponent<FigureSegment>();
-                segment.SetColor(_objectColor);
-                segment.SetNumber(i + 1);
-                segment.OnSegmentCleared += SegmentCleared;
-
+                await segment.Init(_objectColor, sortOrder, _character, SegmentCleared, _allEvents);
                 _segments.Add(segment);
             }
 
             ChangeSegmentActive(activeSegment);
         }
+
+        public void SetCharacter(Ufo character)
+        {
+            _character = character;
+        }
+
+        public List<Vector3> GetCurrentPositions() 
+            => _segments[activeSegment]?.GetPositions();
+        
 
         private void SegmentCleared()
         {
@@ -46,19 +59,17 @@ namespace Game.Figure
         }
 
         private void ChangeSegmentActive(int activeSegment)
-        {
+        {   
             if (activeSegment >= _segments.Count)
             {
                 _levelCleared?.Invoke();
-                Debug.Log("WIN!");
                 return;
             }
 
-            Debug.Log($"New segment {activeSegment}");
             for (int i = 0; i < _segments.Count; i++)
             {
                 bool active = i == activeSegment;
-                _segments[i].SetActive(active);
+                _segments[i].SegmentActivator.SetActive(active);
             }
         }
     }

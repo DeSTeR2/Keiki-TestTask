@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Infrastructure.Services.Assets;
+using LevelDatas;
 using Menu.LevelDatas;
 using TMPro;
 using UnityEngine;

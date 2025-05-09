@@ -14,12 +14,9 @@ namespace Infrastructure.StateMachine.States
 
         public void Enter(string param, Action onExit = null)
         {
-            _sceneLoader.LoadWithForcedWaiting(param, onExit);
+            _sceneLoader?.LoadWithForcedWaiting(param, onExit);
         }
 
-        public void Exit()
-        {
-            Debug.Log("Exit LoadingState");
-        }
+        public void Exit() { }
     }
 }

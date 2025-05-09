@@ -1,6 +1,5 @@
 using System;
 using Infrastructure.Events;
-using Unity.VisualScripting;
 using UnityEngine;
 using Zenject;
 using EventType = Infrastructure.Events.EventType;
